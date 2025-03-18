@@ -15,6 +15,8 @@ public class ContactStepDefinition {
     WebDriver driver = DriverManager.getDriver();
     ContactPage contactPage = new ContactPage(driver);
 
+    // GIVEN
+
     // WHEN
     @When("I submit the feedback")
     public void i_submit_the_feedback(){
@@ -53,5 +55,10 @@ public class ContactStepDefinition {
     @Then("error messages from required fields will be removed")
     public void errorMessagesFromRequiredFieldsWillBeRemoved() {
         contactPage.verifyRequiredFieldsErrorMessages(false);
+    }
+
+    @Then("the feedback is submitted successfully")
+    public void theFeedbackIsSubmittedSuccessfully() {
+        contactPage.verifySuccessfulFeedbackSubmission();
     }
 }

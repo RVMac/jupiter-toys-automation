@@ -13,7 +13,7 @@ public class HomeStepDefinition {
     GlobalPage globalPage = new GlobalPage(driver);
 
     // GIVEN
-    @Given("I am in home page")
+    @Given("I am in Home page")
     public void i_am_in_home_page() {
         homePage.NavigateToHome();
     }
@@ -23,4 +23,11 @@ public class HomeStepDefinition {
     public void i_navigate_to_contact_page(){
         globalPage.clickContactNav();
     }
+
+    @When("I navigate to Shop page")
+    public void iNavigateToShopPage() {
+        globalPage.clickShopNav();
+    }
+
+    // THEN
 }

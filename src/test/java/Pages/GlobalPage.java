@@ -17,6 +17,7 @@ public class GlobalPage {
     By NavHome = By.id("nav-home");
     By NavShop = By.id("nav-shop");
     By NavContact = By.id("nav-contact");
+    By NavCart = By.id("nav-cart");
 
     //region Methods
     public void clickHomeNav(){
@@ -29,5 +30,9 @@ public class GlobalPage {
 
     public void clickContactNav(){
         common.click(NavContact);
+    }
+
+    public void clickCartNav() {
+        common.click(NavCart);
     }
 }

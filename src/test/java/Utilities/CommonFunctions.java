@@ -14,7 +14,7 @@ public class CommonFunctions {
 
     public CommonFunctions(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     }
 
     public void click(By locator) {
@@ -41,5 +41,9 @@ public class CommonFunctions {
 
     public String getText(By locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).getText();
+    }
+
+    public void waitForElementToBeNotVisible(By locator){
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
     }
 }

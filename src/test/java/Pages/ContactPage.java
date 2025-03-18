@@ -26,6 +26,9 @@ public class ContactPage {
     By EmailTextField = By.id("email");
     By MessageTextField = By.id("message");
 
+    By SendingFeedbackProgressBar = By.cssSelector("div.progress.progress-info.wait");
+    By SuccessFeedbackSendingMessage = By.xpath("//div[@ui-if='contactValidSubmit']");
+
     // Methods
     public void clickSubmit(){
         common.click(SubmitButton);
@@ -45,5 +48,10 @@ public class ContactPage {
         common.enterText(ForenameTextField, forename);
         common.enterText(EmailTextField, email);
         common.enterText(MessageTextField, message);
+    }
+
+    public void verifySuccessfulFeedbackSubmission() {
+        common.waitForElementToBeNotVisible(SendingFeedbackProgressBar);
+        common.waitForElementToBePresent(SuccessFeedbackSendingMessage);
     }
 }
