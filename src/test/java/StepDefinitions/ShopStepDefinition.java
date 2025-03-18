@@ -4,7 +4,6 @@ import Pages.GlobalPage;
 import Pages.ShopPage;
 import Utilities.DriverManager;
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 
